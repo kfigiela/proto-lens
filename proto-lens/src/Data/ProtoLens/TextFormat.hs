@@ -28,7 +28,11 @@ import Control.Arrow (left)
 import Data.Bifunctor (first)
 import qualified Data.ByteString
 import Data.Char (isPrint, isAscii, chr)
+#if MIN_VERSION_base(4,21,0)
+import Data.Foldable (foldlM)
+#else
 import Data.Foldable (foldlM, foldl')
+#endif
 import qualified Data.Map as Map
 import Data.Maybe (catMaybes)
 import Data.Proxy (Proxy(Proxy))

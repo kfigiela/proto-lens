@@ -15,7 +15,10 @@ module Data.ProtoLens.Compiler.Plugin
     , collectEnvFromDeps
     ) where
 
+#if MIN_VERSION_base(4,21,0)
+#else
 import Data.List (foldl')
+#endif
 import qualified Data.Map.Strict as Map
 import Data.Map.Strict (Map, unions, (!))
 import Data.String (fromString)
